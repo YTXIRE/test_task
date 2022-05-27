@@ -14,7 +14,7 @@ class TestGoogle:
         google_page.check_title('Калькулятор')
         for item in ['1', '×', '2', '−', '3', '+', '1', '=']:
             google_page.click_button_with_text(item)
-        google_page.check_result({
-            'expression': '1 × 2 - 3 + 1 =',
-            'result': '0'
-        })
+        google_page.check_result(
+            expression='1 × 2 - 3 + 1 =',
+            result='0',
+        )

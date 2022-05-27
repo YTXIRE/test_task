@@ -9,11 +9,11 @@ class GooglePage(Elements):
         self.browser = browser
 
     @step('Открытие страницы')
-    def open(self, url='/'):
+    def open(self, url: str = '/'):
         self.browser.open(url)
 
     @step('Заполнения поля поиска значением {value}')
-    def fill_search_form(self, value):
+    def fill_search_form(self, value: str):
         self.element('[title="Поиск"]').set_value(value)
 
     @step('Клик по кнопке поиска')
@@ -21,15 +21,15 @@ class GooglePage(Elements):
         self.element('[title="Поиск"]').press_enter()
 
     @step('Проверка названия страницы')
-    def check_title(self, title):
+    def check_title(self, title: str):
         page_title = self.browser.get(query.title)
         assert title in page_title, f"Заголовок страницы: {page_title}, ожидаемый результат: {title}"
 
     @step('Клик по кнопке с текстом - {text}')
-    def click_button_with_text(self, text):
+    def click_button_with_text(self, text: str):
         self.element(f'//td/div/div[text() = "{text}"]').press_enter()
 
     @step('Проверка результата')
-    def check_result(self, result):
-        self.element('//span[@jsname="ubtiRe"]').should(have.text(result['expression']))
-        self.element('//span[@jsname="VssY5c"]').should(have.text(result['result']))
+    def check_result(self, expression: str, result: str):
+        self.element('//span[@jsname="ubtiRe"]').should(have.text(expression))
+        self.element('//span[@jsname="VssY5c"]').should(have.text(result))
