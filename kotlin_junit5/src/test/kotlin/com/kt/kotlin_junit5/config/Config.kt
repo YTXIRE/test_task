@@ -1,4 +1,4 @@
-package com.able.config
+package com.kt.kotlin_junit5.config
 
 open class Config {
     // local settings
@@ -20,7 +20,7 @@ open class Config {
     private val localHost = "localhost"
     private val remoteHost = "localhost"
     private val localDbName = "test"
-    private val remoteDbName = "tes"
+    private val remoteDbName = "test"
     private val localUser = "root"
     private val remoteUser = "root"
     private val localPassword = "root"

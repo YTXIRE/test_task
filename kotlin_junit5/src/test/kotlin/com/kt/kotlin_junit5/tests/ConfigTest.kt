@@ -1,6 +1,6 @@
 package com.kt.kotlin_junit5.tests
 
-import com.able.config.Config
+import com.kt.kotlin_junit5.config.Config
 import com.codeborne.selenide.Configuration
 import com.codeborne.selenide.Selenide
 import com.codeborne.selenide.logevents.SelenideLogger

@@ -1,5 +1,5 @@
 from core.utils.allure_wrapper import step
-from core.utils.selene import be, have
+from core.utils.selene import have
 from core.utils.selene.core import query
 from elements.elements import Elements
 
